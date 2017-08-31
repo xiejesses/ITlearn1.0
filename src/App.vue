@@ -1,24 +1,32 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    
-    <router-view></router-view>
+    <!--<img src="./assets/logo.png">-->
+    <vindex></vindex>
+    <!--<router-view></router-view>-->
   </div>
 </template>
 
 <script>
+import vindex from './components/Vindex'
 export default {
-  name: 'app'
+  name: 'app',
+  components:{vindex}
 }
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  /*font-family: 'Avenir', Helvetica, Arial, sans-serif;*/
+  /*-webkit-font-smoothing: antialiased;*/
+  /*-moz-osx-font-smoothing: grayscale;*/
+  /*text-align: center;*/
+  /*color: #2c3e50;*/
+  /*margin-top: 60px;*/
+  
+  /*body{*/
+  /*  margin:0;*/
+  /*  padding:0;*/
+  /*  background:#f4f5f5;*/
+  /*}*/
 }
 </style>
