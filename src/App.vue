@@ -1,8 +1,6 @@
 <template>
   <div id="app">
-    <!--<img src="./assets/logo.png">-->
     <vindex></vindex>
-    <!--<router-view></router-view>-->
   </div>
 </template>
 

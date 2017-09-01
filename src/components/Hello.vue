@@ -14,7 +14,7 @@
     
     <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
-    <el-button type="primary">主要按钮</el-button>
+    
     <h2>Ecosystem</h2>
     <el-alert
     title="成功提示的文案"
