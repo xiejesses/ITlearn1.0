@@ -110,7 +110,7 @@
     height: 75px;
     background-color: #FFFFFF;
     width: 100%;
-    border-bottom: 5px solid #f6f6f6;
+    border-bottom: 10px solid #f6f6f6;
     /*text-align: center;*/
     /*padding-top: 23px;*/
 }
