@@ -3,6 +3,8 @@
 import Vue from 'vue'
 import ElementUI from 'element-ui'
 import './theme/index.css'
+import './style.less'
+// import 'font-awesome/css/font-awesome.min.css'
 // import Icon from 'vue-svg-icon/Icon.vue'
 // import './theme/font-awesome.min.css'
 //import 'element-ui/lib/theme-default/index.css'

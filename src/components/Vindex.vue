@@ -13,8 +13,13 @@
                     <div class="nav-right-serch">
                         <el-input placeholder="搜索 文章" icon="search" v-model="input1" :on-icon-click="handleIconClik"></el-input>
                     </div>
-                    <a href="javascript:void(0)" class="login" @click="loginModalFlag=true">登录</a>
-                    <a href="javascript:void(0)" class="border" @click="registerModalFlag=true"><span class="register">注册</span></a>
+                    <div class="afterLogin">
+                        <i class="el-icon-fa-hand-o-right"></i>
+                    </div>
+                    <div class="beforeLogin" v-if="username">
+                        <a href="javascript:void(0)" class="login" @click="loginModalFlag=true">登录</a>
+                        <a href="javascript:void(0)" class="border" @click="registerModalFlag=true"><span class="register">注册</span></a>
+                    </div>
                 </div>
             </div>  
         </div>
@@ -81,6 +86,11 @@
 </script>
 
 <style>
+
+.beforeLogin {
+  display: inline-block;
+  float: left;
+}
 
 .nav-left .router-link-active {
     border-bottom: 2px solid #03B964;
