@@ -13,40 +13,67 @@
                     <div class="nav-right-serch">
                         <el-input placeholder="搜索 文章" icon="search" v-model="input1" :on-icon-click="handleIconClik"></el-input>
                     </div>
-                    <router-link to="" class="login" >登录</router-link>
-                    <router-link to="" class="border"><span class="register">注册</span></router-link>
+                    <a href="javascript:void(0)" class="login" @click="loginModalFlag=true">登录</a>
+                    <a href="javascript:void(0)" class="border" @click="registerModalFlag=true"><span class="register">注册</span></a>
                 </div>
             </div>  
-            
-            
         </div>
+        <login-register v-bind:loginModalFlag="loginModalFlag" v-bind:registerModalFlag="registerModalFlag" v-on:close="closeModal" v-on:change="changeFlag"></login-register>
+
         <router-view></router-view>
     </div>
 </template>
 
 <script>
+    import LoginRegister from './LoginRegister'
     export default{
         name:'vindex',
-        // data: {
-        //     isActive: 1,
-        //     // isActive2: false,
-        //     // isActive3: false
-        //     // return {
-        //     //     input1:'',
-        //     //     isActive:true,
-        //     // }
-        // },
-        // data: {
-        //     // isActive:true
-        // },
+       
         data() {
             return {
-
+                userName:'',
+                userPwd:'',
+                loginModalFlag:false,
+                registerModalFlag:false,
+                loginerrorTip:false,
+                registererrorTip:false
             }
         },
-        methods: {
-            handleIconClik(ev){
-                console.log(ev);
+        components:{
+          LoginRegister,
+        },
+        methods: { 
+            // handleIconClik(ev){
+            //     console.log(ev);
+            // },
+            changeFlag(){
+                this.loginModalFlag=!this.loginModalFlag;
+                this.registerModalFlag=!this.registerModalFlag;
+            },
+            closeModal(){
+                this.loginModalFlag=false;
+                this.registerModalFlag=false;
+            },
+            register(){
+                if(!this.userRegisterName || !this.userRegisterPwd || !userRegisterEmail){
+                  this.registererrorTip = true;
+                  return;
+                }
+                axios.post("/users/",{
+                  userName:this.userRegisterName,
+                  userPwd:this.userRegisterPwd,
+                  userEmail:this.userRegisterEmail
+                }).then((response)=>{
+                    let res = response.data;
+                    if(res.status=="0"){
+                      this.registererrorTip = false;
+                      this.registerModalFlag = false;
+                      this.$store.commit("updateUserInfo",res.result.userName);
+                    }else{
+                      this.registererrorTip = true;
+                      this.registererrorTip = true;
+                    }
+                });
             }
         }
         
@@ -54,14 +81,7 @@
 </script>
 
 <style>
-/*.nav-left a.router-link-active {
-    border-bottom: 2px solid #03B964;
-    padding-bottom: 25px;
-}*/
-/*.active {
-    border-bottom: 2px solid #03B964;
-    padding-bottom: 25px;
-}*/
+
 .nav-left .router-link-active {
     border-bottom: 2px solid #03B964;
     padding-bottom: 25px;
@@ -132,16 +152,4 @@
     border-width: 1px;
 }
 
-/*.router-link-active::after{
-    
-    position: absolute;
-    bottom: -20px;
-    left: 10px;
-    right: 0;
-    height: 4px;
-    width: 34px;
-    background: red;
-
-}*/
-/*@import url(../theme/font-awesome.min.css);*/
 </style>
