@@ -3,6 +3,8 @@ import Router from 'vue-router'
 import Index from '@/components/Index'
 import Group from '@/components/Group'
 import Project from '@/components/Project'
+import Share from '@/components/Share'
+import Notifications from '@/components/Notifications'
 
 // import Vindex from '@/components/Vindex'
 
@@ -24,7 +26,18 @@ export default new Router({
       path:'/project',
       name: 'Project',
       component: Project
+    },
+    {
+      path:'/share',
+      name: 'Share',
+      component: Share
+    },
+    {
+      path:'/notifications',
+      name: 'Notifications',
+      component: Notifications
     }
+
 
   ]
 })

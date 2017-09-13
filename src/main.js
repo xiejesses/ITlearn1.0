@@ -10,6 +10,9 @@ import './style.less'
 //import 'element-ui/lib/theme-default/index.css'
 import App from './App'
 import router from './router'
+import Gravatar from 'vue-gravatar';
+
+Vue.component('v-gravatar', Gravatar);
 
 Vue.use(ElementUI);
 // Vue.component('icon',Icon);

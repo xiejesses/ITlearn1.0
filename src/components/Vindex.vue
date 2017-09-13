@@ -14,7 +14,31 @@
                         <el-input placeholder="搜索 文章" icon="search" v-model="input1" :on-icon-click="handleIconClik"></el-input>
                     </div>
                     <div class="afterLogin">
-                        <i class="el-icon-fa-hand-o-right"></i>
+                        <div class="shareAndnoti">
+                          <router-link to="/share" title="分享文章">
+                            <i class="el-icon-fa el-icon-fa-share-alt" aria-hidden="true" style="margin-top:6px"></i>
+                          </router-link>
+                          <router-link to="/notifications" >
+                            <i class="el-icon-fa el-icon-fa-bell-o" aria-hidden="true" style="margin-top:6px;margin-left:-15px"></i>
+                          </router-link>
+                        </div>
+                        
+                        <div class="img-avatar">
+
+                          <el-dropdown trigger="click">
+                              <span class="el-dropdown-link">
+                                <v-gravatar email="835612575@qq.com" size='33'/>
+                              </span>
+                              <el-dropdown-menu slot="dropdown">
+                                <router-link to="/share"><el-dropdown-item><i class="el-icon-fa el-icon-fa-home" aria-hidden="true"></i>我的主页</el-dropdown-item></router-link>
+                                <router-link to=""><el-dropdown-item><i class="el-icon-fa el-icon-fa-heart" aria-hidden="true"></i>我喜欢的</el-dropdown-item></router-link>
+                                <router-link to=""><el-dropdown-item divided><i class="el-icon-fa el-icon-fa-cog" aria-hidden="true"></i>设置</el-dropdown-item></router-link>
+                                <router-link to=""><el-dropdown-item><i class="el-icon-fa el-icon-fa-info-circle" aria-hidden="true"></i>关于</el-dropdown-item></router-link>
+                                <router-link to=""><el-dropdown-item divided><i class="el-icon-fa el-icon-fa-sign-out" aria-hidden="true"></i>退出</el-dropdown-item></router-link>
+                              </el-dropdown-menu>
+                            </el-dropdown>
+
+                        </div>
                     </div>
                     <div class="beforeLogin" v-if="username">
                         <a href="javascript:void(0)" class="login" @click="loginModalFlag=true">登录</a>
@@ -86,7 +110,83 @@
 </script>
 
 <style>
+/*.img-border {
+  border-radius: 50%;
+}*/
+.el-dropdown-menu {
+  margin-top: 22px;
+  /*margin-left: 150px;*/
+  width: 150px;
+}
+.el-dropdown-menu li {
+  text-align: left;
+  margin-left: 20px;
+}
+.el-dropdown-menu a {
+  text-decoration: none;
+  color: #818181;
+  font-size: 17px;
+  /*padding-left: 10px;*/
+}
+.el-dropdown-menu_item{
+  /*color: #818181;*/
+  /*padding-left:20px;*/
+}
+/*.el-dropdown-item {
+  padding-left: 10px;
+}*/
 
+.img-avatar {
+  display: inline-block;
+  float: left;
+}
+.img-avatar img {
+  display: inline-block;
+  /*float: left;*/
+  margin-top: -2px;
+  border-radius: 50%;
+}
+.shareAndnoti {
+  display: inline-block;
+  float: left !important;
+  margin-right: 5px;
+}
+
+.el-icon-fa-sign-out::before {
+  font-size: 17px;
+  margin-right: 10px;
+}
+.el-icon-fa-info-circle::before {
+  font-size: 17px;
+  margin-right: 10px;
+}
+.el-icon-fa-cog::before {
+  font-size: 17px;
+  margin-right: 10px;
+}
+.el-icon-fa-heart::before {
+  font-size: 16px;
+  margin-right: 10px;
+}
+.el-icon-fa-home::before {
+  font-size: 17px;
+  margin-right: 10px;
+}
+.el-icon-fa-share-alt::before {
+  font-size: 18px;
+  color: #03B964;
+  /*margin-top: 15px;*/
+}
+.el-icon-fa-bell-o::before {
+  font-size: 18px;
+}
+
+.afterLogin {
+  display: inline-block;
+  float: left;
+  /*padding: 10px;*/
+  margin-left: 10px;
+}
 .beforeLogin {
   display: inline-block;
   float: left;
