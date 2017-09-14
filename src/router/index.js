@@ -5,6 +5,7 @@ import Group from '@/components/Group'
 import Project from '@/components/Project'
 import Share from '@/components/Share'
 import Notifications from '@/components/Notifications'
+import User from '@/components/User'
 
 // import Vindex from '@/components/Vindex'
 
@@ -36,6 +37,11 @@ export default new Router({
       path:'/notifications',
       name: 'Notifications',
       component: Notifications
+    },
+    {
+      path:'/user',
+      name: 'User',
+      component: User
     }
 
 

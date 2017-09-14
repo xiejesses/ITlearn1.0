@@ -27,10 +27,10 @@
 
                           <el-dropdown trigger="click">
                               <span class="el-dropdown-link">
-                                <v-gravatar email="835612575@qq.com" size='33'/>
+                                <v-gravatar email="835614574@qq.com" size='33'/>
                               </span>
                               <el-dropdown-menu slot="dropdown">
-                                <router-link to="/share"><el-dropdown-item><i class="el-icon-fa el-icon-fa-home" aria-hidden="true"></i>我的主页</el-dropdown-item></router-link>
+                                <router-link to="/user"><el-dropdown-item><i class="el-icon-fa el-icon-fa-home" aria-hidden="true"></i>我的主页</el-dropdown-item></router-link>
                                 <router-link to=""><el-dropdown-item><i class="el-icon-fa el-icon-fa-heart" aria-hidden="true"></i>我喜欢的</el-dropdown-item></router-link>
                                 <router-link to=""><el-dropdown-item divided><i class="el-icon-fa el-icon-fa-cog" aria-hidden="true"></i>设置</el-dropdown-item></router-link>
                                 <router-link to=""><el-dropdown-item><i class="el-icon-fa el-icon-fa-info-circle" aria-hidden="true"></i>关于</el-dropdown-item></router-link>
@@ -110,12 +110,9 @@
 </script>
 
 <style>
-/*.img-border {
-  border-radius: 50%;
-}*/
+
 .el-dropdown-menu {
   margin-top: 22px;
-  /*margin-left: 150px;*/
   width: 150px;
 }
 .el-dropdown-menu li {
@@ -126,15 +123,7 @@
   text-decoration: none;
   color: #818181;
   font-size: 17px;
-  /*padding-left: 10px;*/
 }
-.el-dropdown-menu_item{
-  /*color: #818181;*/
-  /*padding-left:20px;*/
-}
-/*.el-dropdown-item {
-  padding-left: 10px;
-}*/
 
 .img-avatar {
   display: inline-block;
@@ -175,7 +164,6 @@
 .el-icon-fa-share-alt::before {
   font-size: 18px;
   color: #03B964;
-  /*margin-top: 15px;*/
 }
 .el-icon-fa-bell-o::before {
   font-size: 18px;
@@ -184,7 +172,6 @@
 .afterLogin {
   display: inline-block;
   float: left;
-  /*padding: 10px;*/
   margin-left: 10px;
 }
 .beforeLogin {
@@ -195,6 +182,7 @@
 .nav-left .router-link-active {
     border-bottom: 2px solid #03B964;
     padding-bottom: 25px;
+
 }
 .nav-right a:hover {
     color: #03B964;
@@ -202,7 +190,6 @@
 .nav-right-serch {
     display:inline-block;
     float: left;
-    /*margin-right: 10px;*/
     margin-top: -2px;
 }
 .nav-body {
@@ -212,23 +199,20 @@
 .nav-left {
     display: inline-block;
     float: left !important;
-    /*border: 2px solid red;*/
     margin-top: 20px;
 }
 .nav-left a{
     position: relative;
-    /*right: 20%;*/
     text-decoration: none;
     font-size: 18px;
     color: black;
-    padding-left: 20px;
-    padding-right: 20px;
+    margin-right: 30px;
+    
 }
 .nav-right {
     display: inline-block;
     float: right !important;
     margin-top: 20px;
-    /*border: 2px solid green;*/
 }
 .nav-right a {
     text-decoration: none;
@@ -241,8 +225,6 @@
     background-color: #FFFFFF;
     width: 100%;
     border-bottom: 10px solid #f6f6f6;
-    /*text-align: center;*/
-    /*padding-top: 23px;*/
 }
 .logo {
     float: left;
