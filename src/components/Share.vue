@@ -25,11 +25,16 @@
                 <el-radio label="ios"></el-radio>
               </el-radio-group>
             </el-form-item>
-            <el-tag :key="tag" v-for="tag in dynamicTags" :closable="true" :close-transition="false" @close="handleClose(tag)">
-              {{tag}}
-            </el-tag>
-            <el-input class="input-new-tag" placeholder="标签（可选填）" v-if="inputVisible" v-model="inputValue" ref="saveTagInput" size="medi" @keyup.enter.native="handleInputConfirm" @blur="handleInputConfirm">
-            </el-input>
+            <!--<el-tag :key="tag" v-for="tag in dynamicTags" :closable="true" :close-transition="false" @close="handleClose(tag)">
+                {{tag}}
+              </el-tag>
+              <el-input class="input-new-tag" placeholder="标签（可选填）" v-if="inputVisible" v-model="inputValue" ref="saveTagInput" size="medi" @keyup.enter.native="handleInputConfirm" @blur="handleInputConfirm">
+              </el-input>-->
+
+            <el-select v-model="value10" multiple filterable allow-create placeholder="请选择文章标签(可选填)">
+              <el-option v-for="item in options5" :key="item.value" :label="item.label" :value="item.value">
+              </el-option>
+            </el-select>
 
             <el-form-item>
               <el-button type="primary" @click="onSubmit" class="sharebutton">立即分享</el-button>
@@ -39,12 +44,12 @@
         </div>
         <div class="form-right-img">
           <!--<el-upload ref="upload" slot="trigger" class="upload-demo" drag action="https://jsonplaceholder.typicode.com/posts/" multiple :auto-upload="false" list-type="picture">
-              <i class="el-icon-upload"></i>
-              <div class="el-upload__text">将文件拖到此处，或
-                <em>点击上传</em>
-              </div>
-              <div class="el-upload__tip" slot="tip">只能上传jpg/png文件，且不超过500kb</div>
-            </el-upload>-->
+                <i class="el-icon-upload"></i>
+                <div class="el-upload__text">将文件拖到此处，或
+                  <em>点击上传</em>
+                </div>
+                <div class="el-upload__tip" slot="tip">只能上传jpg/png文件，且不超过500kb</div>
+              </el-upload>-->
           <el-upload class="upload-demo" ref="upload" action="https://jsonplaceholder.typicode.com/posts/" :on-preview="handlePreview" :on-remove="handleRemove" :file-list="fileList" :auto-upload="false" :drag="true">
             <i class="el-icon-upload"></i>
             <div class="el-upload__text">将文件拖到此处，或
@@ -54,7 +59,7 @@
             <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
           </el-upload>
         </div>
-        
+
       </div>
     </div>
   </div>
@@ -70,11 +75,20 @@ export default {
         title: '',
         classify: '',
         desc: '',
-        tags: ''
       },
-      dynamicTags: [],
-      inputVisible: true,
-      inputValue: ''
+      fileList: [],
+
+      options5: [{
+          value: 'HTML',
+          label: 'HTML'
+        }, {
+          value: 'CSS',
+          label: 'CSS'
+        }, {
+          value: 'JavaScript',
+          label: 'JavaScript'
+        }],
+        value10: []
     }
   },
   methods: {
@@ -152,7 +166,7 @@ export default {
   background: #f4f5f5;
   height: auto;
 
-  height: 500px;
+  /*height: 500px;*/
   /*border: 1px solid green;*/
 }
 </style>

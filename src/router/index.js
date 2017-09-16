@@ -6,6 +6,12 @@ import Project from '@/components/Project'
 import Share from '@/components/Share'
 import Notifications from '@/components/Notifications'
 import User from '@/components/User'
+import Like from '@/components/Like'
+import Collection from '@/components/Collection'
+import Tag from '@/components/Tag'
+import Following from '@/components/Following'
+import Follower from '@/components/Follower'
+import Setting from '@/components/Setting'
 
 // import Vindex from '@/components/Vindex'
 
@@ -39,9 +45,42 @@ export default new Router({
       component: Notifications
     },
     {
-      path:'/user',
-      name: 'User',
-      component: User
+      path:'/user/:uName',
+      name: 'user',
+      component: User,
+      children:[
+        {
+          path:'',
+          name:'like',
+          component:Like
+        },
+        {
+          path:'setting',
+          name:'setting',
+          component:Setting
+        },
+        {
+          path:'collection',
+          name:'collection',
+          component:Collection
+        },
+        {
+          path:'tag',
+          name:'tag',
+          component:Tag
+        },
+        {
+          path:'following',
+          name:'following',
+          component:Following
+        },
+        {
+          path:'follower',
+          name:'follower',
+          component:Follower
+        }
+        
+      ],
     }
 
 

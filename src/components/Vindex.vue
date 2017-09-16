@@ -13,7 +13,10 @@
                     <div class="nav-right-serch">
                         <el-input placeholder="搜索 文章" icon="search" v-model="input1" :on-icon-click="handleIconClik"></el-input>
                     </div>
-                    <div class="afterLogin">
+
+                    
+
+                    <div class="afterLogin" v-if="userName">
                         <div class="shareAndnoti">
                           <router-link to="/share" title="分享文章">
                             <i class="el-icon-fa el-icon-fa-share-alt" aria-hidden="true" style="margin-top:6px"></i>
@@ -30,20 +33,23 @@
                                 <v-gravatar email="835614574@qq.com" size='33'/>
                               </span>
                               <el-dropdown-menu slot="dropdown">
-                                <router-link to="/user"><el-dropdown-item><i class="el-icon-fa el-icon-fa-home" aria-hidden="true"></i>我的主页</el-dropdown-item></router-link>
-                                <router-link to=""><el-dropdown-item><i class="el-icon-fa el-icon-fa-heart" aria-hidden="true"></i>我喜欢的</el-dropdown-item></router-link>
-                                <router-link to=""><el-dropdown-item divided><i class="el-icon-fa el-icon-fa-cog" aria-hidden="true"></i>设置</el-dropdown-item></router-link>
-                                <router-link to=""><el-dropdown-item><i class="el-icon-fa el-icon-fa-info-circle" aria-hidden="true"></i>关于</el-dropdown-item></router-link>
-                                <router-link to=""><el-dropdown-item divided><i class="el-icon-fa el-icon-fa-sign-out" aria-hidden="true"></i>退出</el-dropdown-item></router-link>
+                                <router-link :to="{ name: 'like', params: { uName: userName }}"><el-dropdown-item><i class="el-icon-fa el-icon-fa-home" aria-hidden="true"></i>我的主页</el-dropdown-item></router-link>
+                                <router-link to="/"><el-dropdown-item><i class="el-icon-fa el-icon-fa-users" aria-hidden="true"></i>我的小组</el-dropdown-item></router-link>
+                                <router-link to="/"><el-dropdown-item><i class="el-icon-fa el-icon-fa-briefcase" aria-hidden="true"></i>我的项目</el-dropdown-item></router-link>
+                                <!--<router-link to=""><el-dropdown-item divided><i class="el-icon-fa el-icon-fa-cog" aria-hidden="true"></i>设置</el-dropdown-item></router-link>-->
+                                <router-link to="/"><el-dropdown-item divided><i class="el-icon-fa el-icon-fa-info-circle" aria-hidden="true"></i>关于</el-dropdown-item></router-link>
+                                <router-link to="/"><el-dropdown-item divided><i class="el-icon-fa el-icon-fa-sign-out" aria-hidden="true"></i>退出</el-dropdown-item></router-link>
                               </el-dropdown-menu>
                             </el-dropdown>
 
                         </div>
                     </div>
-                    <div class="beforeLogin" v-if="username">
+
+                    <div class="beforeLogin" v-else>
                         <a href="javascript:void(0)" class="login" @click="loginModalFlag=true">登录</a>
                         <a href="javascript:void(0)" class="border" @click="registerModalFlag=true"><span class="register">注册</span></a>
                     </div>
+                    
                 </div>
             </div>  
         </div>
@@ -60,7 +66,7 @@
        
         data() {
             return {
-                userName:'',
+                userName:'jesses',
                 userPwd:'',
                 loginModalFlag:false,
                 registerModalFlag:false,
@@ -149,14 +155,22 @@
   font-size: 17px;
   margin-right: 10px;
 }
-.el-icon-fa-cog::before {
-  font-size: 17px;
-  margin-right: 10px;
-}
-.el-icon-fa-heart::before {
+.el-icon-fa-users::before {
   font-size: 16px;
   margin-right: 10px;
 }
+.el-icon-fa-briefcase::before {
+    font-size: 17px;
+  margin-right: 10px;
+}
+/*.el-icon-fa-cog::before {
+  font-size: 17px;
+  margin-right: 10px;
+}*/
+/*.el-icon-fa-heart::before {
+  font-size: 16px;
+  margin-right: 10px;
+}*/
 .el-icon-fa-home::before {
   font-size: 17px;
   margin-right: 10px;
