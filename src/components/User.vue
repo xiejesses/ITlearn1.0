@@ -6,13 +6,17 @@ v<template>
           </div>
           <div class="otherUserInfo">
             <p class="username">{{userName}}</p>
+            <span class="personalInfo">{{selfIntroduce}}</span>
+            <span class="personalInfo">个人主页：{{personalPage}}</span>
             <div class="follow">
               <router-link :to="{ name: 'following'}" >正在关注 {{following}}</router-link>
               <router-link :to="{ name: 'follower'}" >关注者 {{follower}}</router-link>
               <!--<a href="javascript:void(0)" @click="following">正在关注 {{following}}</a>
               <a href="javascript:void(0)" @click="follower">关注者 {{follower}}</a>-->
             </div>
-            <span class="set-button"><el-button><router-link :to="{ name: 'setting'}">设置</router-link></el-button></span>
+            <!--<span class="set-button">-->
+              <el-button class="set-button"><router-link :to="{ name: 'setting'}">设置</router-link></el-button>
+              <!--</span>-->
           </div>
         </div>
         <!--<router-view name="setting"></router-view>-->
@@ -39,6 +43,8 @@ export default {
     return {
       userName:'jesses',
       email:'835614574@qq.com',
+      selfIntroduce: '这家伙很懒，什么也没留下',
+      personalPage: '',
       following:'0',
       follower:'0'
     }
@@ -56,12 +62,20 @@ export default {
   font-size: 15px;
   margin-right: 15px;
 }
+.follow a:hover {
+  color: #03B964;
+}
 
 .set-button a{
   text-decoration: none;
   color: #03B964;
 }
-
+.personalInfo {
+  display: block;
+  font-size: 15px;
+  padding-bottom: 10px;
+  color: #8f8f8f;
+}
 .profileBody-nav {
   border-bottom: 1px solid #dadee9;
   padding-bottom: 8px;
@@ -96,6 +110,7 @@ export default {
   /*font-weight: bold;*/
   font-size: 30px;
   margin-top: 0;
+  margin-bottom: 10px;
 }
 .userAvatar {
   width: 75px;

@@ -11,6 +11,8 @@ import './style.less'
 import App from './App'
 import router from './router'
 import Gravatar from 'vue-gravatar';
+// import AutoFocus from 'vue-auto-focus'
+// Vue.use(AutoFocus);
 
 Vue.component('v-gravatar', Gravatar);
 
