@@ -24,6 +24,7 @@
     "font-awesome": "^4.7.0",
     "less": "^2.7.2",
     "less-loader": "^4.0.5",
+    "moment": "^2.18.1",
     "mongoose": "^4.11.6",
     "morgan": "~1.8.1",
     "pug": "^2.0.0-rc.3",

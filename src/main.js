@@ -10,9 +10,16 @@ import './style.less'
 //import 'element-ui/lib/theme-default/index.css'
 import App from './App'
 import router from './router'
-import Gravatar from 'vue-gravatar';
-// import AutoFocus from 'vue-auto-focus'
-// Vue.use(AutoFocus);
+import Gravatar from 'vue-gravatar'
+import moment from 'moment';
+// import vue-moment from 'vue-moment'
+Vue.prototype.moment = moment
+moment.locale('zh-cn')
+//时间格式
+// Object.defineProperty(Vue.prototype, '$moment', { value: moment });
+// $moment.locale('zh-cn');
+
+Vue.use(require('vue-moment'));
 
 Vue.component('v-gravatar', Gravatar);
 

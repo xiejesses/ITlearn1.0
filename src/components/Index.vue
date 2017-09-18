@@ -4,9 +4,15 @@
       <div class="main">
         <div class="topic-item">
           <div class="topic-header">
-            <v-gravatar :email="email" size='35'/>
-            <router-link :to="{ name: 'like', params: { uName: userName }}">{{userName}}</router-link>
-            <span class="in">in</span>
+            <div class="flex-center">
+              <v-gravatar :email="email" size='35'/>
+              <div class="author">
+                <router-link :to="{ name: 'like', params: { uName: userName }}">{{userName}}</router-link>
+                <span class="in">in</span>
+                <router-link :to="{name: 'tag',params: {tagName:tagName}}">{{tagName}}</router-link>
+              </div>
+              <span class="timeshow"><abbr class="timeago" :title="creatTime">{{moment(creatTime, "YYYYMMDD").fromNow()}}</abbr></span>
+            </div>
           </div>
           <div class="topic-body">
             <a href="" class="topic-body-link">
@@ -45,12 +51,19 @@
 </template>
 
 <script>
+// var moment = require('moment');
+// moment().format();
+// this.$moment.locale('en');
+
 export default {
+  
   name: 'hello',
   data () {
     return {
       userName:'jesses',
       email:'835614574@qq.com',
+      tagName:'Vue',
+      creatTime:'20170910',
       msg: '首页'
     }
   }
@@ -59,15 +72,36 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-/*h2 {*/
-/*    text-align: center;*/
-/*}*/
-.index {
-  /*box-sizing:border-box;*/
+a {
+  text-decoration: none;
+}
+.topic-header a{
+  color: #03B964;
+}
+.flex-center {
+  /*float: left;*/
+}
+.timeshow {
+  display: block;
+  float: right;
+  margin-top: 5px;
+}
+.timeago {
+  text-decoration: none;
+  /*float: right;*/
+}
+.author {
+  float: left;
+  margin-top: 5px;
+  margin-left: 10px;
+}
+.topic-body {
+  clear: left;;
 }
 
 .topic-header img{
     border-radius: 50%;
+    float: left;
 }
 
 
