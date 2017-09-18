@@ -12,6 +12,9 @@ import Tag from '@/components/Tag'
 import Following from '@/components/Following'
 import Follower from '@/components/Follower'
 import Setting from '@/components/Setting'
+import Subscribe from '@/components/Subscribe'
+import Subscribed from '@/components/Subscribed'
+import TagAll from '@/components/TagAll'
 
 // import Vindex from '@/components/Vindex'
 
@@ -52,7 +55,7 @@ export default new Router({
       component: User,
       children:[
         {
-          path:'',
+          path:'like',
           name:'like',
           component:Like
         },
@@ -67,9 +70,22 @@ export default new Router({
           component:Collection
         },
         {
-          path:'tag',
-          name:'tag',
-          component:Tag
+          path:'subscribe',
+          name:'subscribe',
+          component:Subscribe,
+          children:[
+            {
+              path:'subscribed',
+              name:'subscribed',
+              component:Subscribed
+            },
+            {
+              path:'tagAll',
+              name:'tagAll',
+              component:TagAll
+            },
+
+          ]
         },
         {
           path:'following',

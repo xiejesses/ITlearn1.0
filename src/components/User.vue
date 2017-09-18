@@ -25,7 +25,7 @@ v<template>
             <!--<router-link to="/user" exact="true">我喜欢的</router-link>-->
             <router-link :to="{ name: 'like'}" exact="true">我喜欢的</router-link>
             <router-link :to="{ name: 'collection'}">我的收藏集</router-link>
-            <router-link :to="{ name: 'tag'}">标签管理</router-link>
+            <router-link :to="{ name: 'subscribed'}">标签管理</router-link>
             <!--<router-link to="/user" exact="true">我喜欢的</router-link>
             <router-link to="/user/collection">我的收藏集</router-link>
             <router-link to="/user/tag">标签管理</router-link>-->

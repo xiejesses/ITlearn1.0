@@ -1,7 +1,30 @@
 <template>
   <div class="index">
     <div class="body">
-      <div class="main"></div>
+      <div class="main">
+        <div class="topic-item">
+          <div class="topic-header">
+            <v-gravatar :email="email" size='35'/>
+            <router-link :to="{ name: 'like', params: { uName: userName }}">{{userName}}</router-link>
+            <span class="in">in</span>
+          </div>
+          <div class="topic-body">
+            <a href="" class="topic-body-link">
+              <div class="topic-content">
+                <section class="section">
+                  <div class="section-content">
+                    <div class="topic-show-body">
+                      <h3 class="topic-title">##</h3>
+                      <div class="section-topic-content">$$</div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </a>
+          </div>
+          <div class="topic-footer-btns">footer</div>
+        </div>
+      </div>
       <div class="separated"></div>
       <div class="right-side">
         <div class="right-side-top">
@@ -26,6 +49,8 @@ export default {
   name: 'hello',
   data () {
     return {
+      userName:'jesses',
+      email:'835614574@qq.com',
       msg: '首页'
     }
   }
@@ -40,6 +65,13 @@ export default {
 .index {
   /*box-sizing:border-box;*/
 }
+
+.topic-header img{
+    border-radius: 50%;
+}
+
+
+
 .body {
   margin: auto;
   width: 60%;

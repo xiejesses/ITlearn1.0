@@ -31,7 +31,7 @@
               <el-input class="input-new-tag" placeholder="标签（可选填）" v-if="inputVisible" v-model="inputValue" ref="saveTagInput" size="medi" @keyup.enter.native="handleInputConfirm" @blur="handleInputConfirm">
               </el-input>-->
 
-            <el-select v-model="value10" multiple filterable allow-create placeholder="请选择文章标签(可选填)">
+            <el-select v-model="value10" multiple filterable allow-create placeholder="请填写文章标签">
               <el-option v-for="item in options5" :key="item.value" :label="item.label" :value="item.value">
               </el-option>
             </el-select>
