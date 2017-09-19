@@ -32,7 +32,6 @@ export default {
   data() {
     return {
       collectionName: '',
-      collectionJoinNum: '1000',
       collectionArticleNum: '256',
 
       activeName: 'first'
@@ -40,7 +39,6 @@ export default {
   },
   methods: {
     change() {
-      this.collectionJoinNum = 1;
     }
   },
   created() {
