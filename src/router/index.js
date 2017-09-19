@@ -45,6 +45,11 @@ export default new Router({
       component: Share
     },
     {
+      path:'/tag/:tName',
+      name: 'tag',
+      component: Tag
+    },
+    {
       path:'/notifications',
       name: 'Notifications',
       component: Notifications

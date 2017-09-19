@@ -1,6 +1,6 @@
 <template>
     <div class="tag">
-        <h2>{{ msg }}</h2>
+        <h2>{{ tagName }}</h2>
     </div>
 </template>
 
@@ -9,8 +9,12 @@ export default {
   name: 'tag',
   data () {
     return {
-      msg: '标签管理'
+      tagName:'',
     }
+  },
+  created() {
+    this.tagName = this.$route.params.tName;
+    // console.log(this.$route.params.tName);
   }
 }
 </script>
