@@ -15,6 +15,7 @@ import Setting from '@/components/Setting'
 import Subscribe from '@/components/Subscribe'
 import Subscribed from '@/components/Subscribed'
 import TagAll from '@/components/TagAll'
+import Mycollection from '@/components/Mycollection'
 
 // import Vindex from '@/components/Vindex'
 
@@ -48,6 +49,11 @@ export default new Router({
       path:'/tag/:tName',
       name: 'tag',
       component: Tag
+    },
+    {
+      path:'/mycollection/:cName',
+      name: 'mycollection',
+      component: Mycollection
     },
     {
       path:'/notifications',
